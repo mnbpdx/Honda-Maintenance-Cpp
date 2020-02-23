@@ -9,8 +9,10 @@
 
 #include "Job.h"
 
+Job::Job() {}
+
 Job::Job(ifstream infile) {
-	infile >> this;
+//	infile >> this;
 }
 
 void Job::print() {
@@ -18,11 +20,13 @@ void Job::print() {
 }
 
 istream& operator >> (ifstream& inFile, Job& aJob) {
-	inFile >> mileage;
-	cin.get(';')
-	inFile >> task;
+	inFile >> aJob.mileage;
+	inFile.ignore(1, ';');
+	getline(inFile, aJob.task);
+	return inFile;
 }
 
 ostream& operator << (ofstream& outFile, Job& aJob) {
-	outFile << mileage << ';' << task;
+	outFile << aJob.mileage << ';' << aJob.task;
+	return outFile;
 }

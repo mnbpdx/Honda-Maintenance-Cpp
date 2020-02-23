@@ -10,11 +10,13 @@
 #define _JOB_
 
 #include <fstream>
+#include <iostream>
 
 using namespace std;
 
 class Job {
 public:
+	Job();
 	Job(ifstream inFile);
 	void print();
 

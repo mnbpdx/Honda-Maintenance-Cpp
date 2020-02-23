@@ -15,10 +15,12 @@ int main() {
 	Job job1;
 	Job job2;
 	inFile >> job1;
-	cin.get('\n');
 	inFile >> job2;
 
 	job1.print();
 	cout << endl;
-	job2.print();	
+	job2.print();
+	cout << endl;
+
+	inFile.close();
 }
